@@ -14,6 +14,7 @@ namespace semana3_estructuras_de_control
         static void principal()
         {
             int repetir_menu;
+            Console.BackgroundColor = ConsoleColor.Blue;
             System.Console.WriteLine("Estructuras de control en Visual C#");
             System.Console.WriteLine("1. Menú de opciones");
             System.Console.WriteLine("2. Salir");
@@ -21,12 +22,19 @@ namespace semana3_estructuras_de_control
             System.Console.WriteLine("Ingrese 1 para mostrar menú o 2 para salir. ");
             repetir_menu = Int32.Parse(Console.ReadLine());
 
-            while (repetir_menu == 1)
+            switch (repetir_menu)
             {
-                opciones();
+                case 1:
+                    opciones();
+                    break;
+                case 2:
+                    System.Console.WriteLine("Usted ha seleccionado salir!");
+                    break;
+                default:
+                    System.Console.WriteLine("Opción equivocada");
+                    break;
             }
-
-            
+            opciones();
         }
 
 
@@ -34,6 +42,8 @@ namespace semana3_estructuras_de_control
         {
 
             int opcion;
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Yellow;
 
             System.Console.WriteLine("Ejemplos de estructuras de control");
             System.Console.WriteLine("1. Programa 1");
@@ -47,7 +57,7 @@ namespace semana3_estructuras_de_control
             switch (opcion)
             {
                 case 1:
-                    programa1();
+                    ejemplo_if();
                     break;
                 case 2:
                     programa2();
@@ -62,12 +72,12 @@ namespace semana3_estructuras_de_control
                     System.Console.WriteLine("Opción equivocada");
                     break;
             }
-            //System.Console.ReadKey();
-            principal();
+            System.Console.ReadKey();
+            //principal();
 
         }
 
-        static void programa1()
+        static void ejemplo_if()
         {
             System.Console.WriteLine("Ejemplo de IF");
             Console.WriteLine("ingrese un numero entre 1 y 3");
